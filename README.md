@@ -4,13 +4,9 @@
 
 Tandm helps **adults adulting** and **parents parenting** manage their schedules and budgets in one place — reducing stress and wasted effort.
 
----
-
 ## 🌟 Vision
 
 Most tools separate calendars and budgets, but life doesn’t work that way. Every event has a time cost *and* often a money cost. Tandm bridges that gap so people can focus less on juggling tools and more on living life.
-
----
 
 ## 🎯 Scope
 
@@ -33,14 +29,10 @@ Most tools separate calendars and budgets, but life doesn’t work that way. Eve
 - Families and individuals miss opportunities or overspend because they can’t see both sides (time & money) of their commitments.  
 - Simpler, more repeatable routines lead to less stress and more intentional living.
 
----
-
 ## 🚀 Current Status
 
 ⚡ Tandm is **brand new** — this repo is mostly empty for now.  
 If you’re the kind of person who wants to optimize life **throughout** and believes tools should lighten your load, **follow along and witness the journey from the very beginning**.
-
----
 
 ## 📖 Follow the Journey
 
