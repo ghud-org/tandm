@@ -2,7 +2,7 @@
 import { Fragment, useEffect, useState } from "react";
 
 interface Tandm {
-  id: string;
+  id: number;
   name: string;
   date: string;
   amount: number;
@@ -11,15 +11,15 @@ interface Tandm {
 export default function Home() {
   const [tandms, setTandms] = useState<Tandm[]>([
     {
-      id: "id",
+      id: 0,
       name: "name",
-      date: new Date("2/1/2026").getDate().toLocaleString(),
+      date: new Date("2/1/2026").toLocaleString(),
       amount: 0,
     },
     {
-      id: "id",
+      id: 1,
       name: "name",
-      date: new Date("2/1/2026").getDate().toLocaleString(),
+      date: new Date("2/1/2026").toLocaleString(),
       amount: 5,
     },
   ]);
@@ -37,9 +37,9 @@ export default function Home() {
     setTandms([
       ...tandms,
       {
-        id: "created",
+        id: 2,
         name: "created",
-        date: new Date("3/1/2026").getDate().toLocaleString(),
+        date: new Date("3/1/2026").toLocaleString(),
         amount: 10,
       },
     ]);
