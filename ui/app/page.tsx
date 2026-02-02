@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 interface Tandm {
   id: number;
@@ -24,6 +24,7 @@ export default function Home() {
     },
   ]);
   const [total, setTotal] = useState<number>(0);
+  const idRef = useRef(1);
 
   const updateTotal = () => {
     let result = 0;
@@ -37,7 +38,7 @@ export default function Home() {
     setTandms([
       ...tandms,
       {
-        id: 2,
+        id: ++idRef.current,
         name: "created",
         date: new Date("3/1/2026").toLocaleString(),
         amount: 10,
