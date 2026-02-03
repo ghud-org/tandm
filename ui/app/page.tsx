@@ -1,7 +1,12 @@
 "use client";
 import { SubmitEvent, useEffect, useRef, useState } from "react";
+import { TextInput } from "./components/TextInput";
+import { NumberInput } from "./components/NumberInput";
+import { DateTimeInput } from "./components/DateInput";
+import { SubmitButton } from "./components/SubmitButton";
+import { TandmList } from "./components/TandmList";
 
-interface Tandm {
+export interface Tandm {
   id: number;
   name: string;
   date: string;
@@ -23,7 +28,12 @@ export default function Home() {
       amount: 5,
     },
   ]);
-  const [total, setTotal] = useState<number>(0);
+
+  const initializeTotal = () => {
+    return tandms.reduce((sum, tandm) => sum + tandm.amount, 0);
+  };
+
+  const [total, setTotal] = useState<number>(initializeTotal);
   const idRef = useRef(1);
 
   const updateTotal = () => {
@@ -63,65 +73,12 @@ export default function Home() {
         <TextInput name="Name" required />
         <DateTimeInput name="Date" />
         <NumberInput name="Amount" />
-        <button className="border-2 border-cyan-400" type="submit">
-          Create Tandm
-        </button>
+        <SubmitButton label="Create Tandm" />
       </form>
       <div className="border-2 border-amber-600">
         <span>Total: {total}</span>
       </div>
-      <ul>
-        {tandms.map((tandm) => {
-          return (
-            <div key={tandm.id} className="border-2 border-amber-300">
-              <li>Name: {tandm.name}</li>
-              <li>Date: {tandm.date}</li>
-              <li>Amount: {tandm.amount}</li>
-            </div>
-          );
-        })}
-      </ul>
+      <TandmList tandms={tandms} />
     </div>
-  );
-}
-
-export function TextInput(props: { name: string; required?: boolean }) {
-  return (
-    <label>
-      <div>{props.name}</div>
-      <input
-        className="border-2 border-white"
-        name={props.name}
-        type="text"
-        required={props.required}
-      />
-    </label>
-  );
-}
-
-export function NumberInput(props: { name: string }) {
-  return (
-    <label>
-      <div>{props.name}</div>
-      <input
-        className="border-2 border-white"
-        name={props.name}
-        type="number"
-      />
-    </label>
-  );
-}
-
-export function DateTimeInput(props: { name: string }) {
-  return (
-    <label>
-      <div>{props.name}</div>
-      <input
-        className="border-2 border-white"
-        name={props.name}
-        type="datetime-local"
-        defaultValue={new Date().toLocaleString()}
-      />
-    </label>
   );
 }
