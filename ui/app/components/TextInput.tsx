@@ -3,7 +3,7 @@ export function TextInput(props: { name: string; required?: boolean }) {
     <label>
       <div>{props.name}</div>
       <input
-        className="border-2 border-white"
+        className="border-2 border-white p-1"
         name={props.name}
         type="text"
         required={props.required}

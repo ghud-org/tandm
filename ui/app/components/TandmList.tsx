@@ -2,10 +2,13 @@ import { Tandm } from "../page";
 
 export function TandmList(props: { tandms: Tandm[] }) {
   return (
-    <ul>
+    <ul className="flex flex-col gap-4 p-4">
       {props.tandms.map((tandm) => {
         return (
-          <div key={tandm.id} className="border-2 border-amber-300">
+          <div
+            key={tandm.id}
+            className="border-2 border-amber-300 p-4 flex flex-col gap-4"
+          >
             <li>Name: {tandm.name}</li>
             <li>Date: {tandm.date}</li>
             <li>Amount: {tandm.amount}</li>

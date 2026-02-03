@@ -69,13 +69,18 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-4">
-      <form className="flex flex-col gap-4" onSubmit={createTandm}>
-        <TextInput name="Name" required />
-        <DateTimeInput name="Date" />
-        <NumberInput name="Amount" />
+      <form
+        className="flex flex-col gap-4 border-2 border-teal-500 p-4"
+        onSubmit={createTandm}
+      >
+        <div className="flex gap-4">
+          <TextInput name="Name" required />
+          <DateTimeInput name="Date" />
+          <NumberInput name="Amount" />
+        </div>
         <SubmitButton label="Create Tandm" />
       </form>
-      <div className="border-2 border-amber-600">
+      <div className="border-2 border-amber-600 p-4">
         <span>Total: {total}</span>
       </div>
       <TandmList tandms={tandms} />
